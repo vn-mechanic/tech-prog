@@ -1,14 +1,14 @@
 *{
             margin:0;
             padding: 0;
-            
+
 }
 
 
 
 html{
     color: #FFB0E0 ;
-    
+
     font-family: 'Muli', sans-serif;
     letter-spacing: 0.2px;
 
@@ -17,17 +17,24 @@ html{
 
 #wrap {
     background: #374675;
-   
+
 }
 #wrap2 {
     background: #97ADE7;
     background:linear-gradient(to bottom, #97ADE7 489px, #FFFFFF 489px);
-   
+
 }
 #wrap3 {
     background: #374675;
-   
 }
+
+#wrap4 {
+  width: 1450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 header{
     width: 1460px;
     margin: 0 auto;
@@ -43,7 +50,7 @@ header{
 
 .name{
     vertical-align: center;
-    
+
     line-height: 20px;
     font-family: 'Muli', sans-serif;
     margin-left: 20px;
@@ -51,7 +58,7 @@ header{
     font-weight: 800;
     color: #FFEEF8;
     display: inline-block;
-    
+
 }
 
 .name2{
@@ -74,7 +81,7 @@ a{
     text-decoration: none;
     display:  inline-block;
     color: #FFB0E0;
-    
+
 }
 
 .logo{
@@ -113,7 +120,7 @@ a{
 }
 .form1{
     position: absolute; /* Абсолютное позиционирование */
-     left: 29%; /* Положение слоя от левого края */
+    left: 29%; /* Положение слоя от левого края */
     top: 15px;
 }
 
@@ -124,21 +131,21 @@ a{
     top: 0;
     right: 0;
     background-color: #EDF2FF;
-    border: none; 
+    border: none;
     outline: none;
     font-size: 16px;
-    
+
     color: #1E2C59;
 }
 
-input[type="search"]::placeholder { 
+input[type="search"]::placeholder {
     color: #1E2C59;
     font-size: 14px;
-} 
+}
 
 input[type="search"]{
     color: #1E2C59;
-    border: none; 
+    border: none;
     outline: none;
     margin-left: 14px;
     height: 36px;
@@ -158,7 +165,7 @@ nav {
     top: 0px;
 }
 ul {
-  list-style: none; 
+  list-style: none;
   margin: 0;
   padding: 0;
     font-size: 14px;
@@ -211,12 +218,12 @@ ul a {
 #films{
     display: inline;
     margin-top: 0px;
-    
+
 }
 
 .submenu a{
     padding-left: 30px;
-    
+
 }
 #menu{
 }
@@ -226,7 +233,7 @@ ul a {
     position: absolute;
     top: 5px;
     right: 2%;
-    
+
 }
 #fa-play-circle{
     font-size: 30px;
@@ -234,15 +241,15 @@ ul a {
 
 #main-one{
     height: 489px;
-    
+
 }
 main{
     color: #101A39;
 }
 h1{
     font-size: 32px;
-    padding-bottom:29px; 
-    
+    padding-bottom:29px;
+
 }
 #text-one{
     width: 525px;
@@ -269,7 +276,7 @@ h1{
     bottom: -220px;
     left: 0;
     font-size: 60px;
-    border: none; 
+    border: none;
     outline: none;
     background-color: transparent;
     line-height: 56px;
@@ -281,7 +288,7 @@ button{
 #movies1{
     height: 443px;
     width: 723px;
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
     position: relative;
     top: -182px;
     left: 700px;
@@ -290,7 +297,7 @@ h2{
     padding-top: 17px;
     padding-left: 35px;
     padding-bottom: 15px;
-    
+
 }
 
 .m1{
@@ -302,7 +309,7 @@ h2{
     background-color: aqua;
     display: inline-block;
     margin-right: 45px;
-    
+
 }
 .row1:last-child{
     margin: 0;
@@ -323,7 +330,7 @@ h2{
     margin-left: 35px;
     margin-top: 11px;
     margin-bottom: 13px;
-    
+
 }
 .m2{
     padding-left: 35px;
@@ -332,7 +339,7 @@ h2{
     width: 184px;
     display: inline-block;
     margin-right: 45px;
-    
+
 }
 .row2:last-child{
     margin: 0;
@@ -344,8 +351,8 @@ h2{
     border-radius: 4px;
     font-weight: 400;
     margin-top: 10px;
-    
-} 
+
+}
 
 #main-two{
     position: relative;
@@ -359,7 +366,7 @@ h2{
 }
 #main-two button {
     font-size: 60px;
-    border: none; 
+    border: none;
     outline: none;
     background-color: transparent;
     position: relative;
@@ -389,13 +396,13 @@ h2{
 font-weight: bold;
 font-size: 18px;
 margin-top: 20px;
-    
+
 }
 .par{
     position: absolute;
     padding-left: 29px;
     line-height: 23px;
-    
+
 }
 .row3-1{
     width: 400px;
@@ -419,8 +426,8 @@ margin-top: 20px;
     border-radius: 4px;
     margin-top: 25px;
     font-weight: 400;
-    
-} 
+
+}
 #main2 button:last-child {
     margin-right: 0px;
 }
@@ -437,10 +444,125 @@ margin-top: 20px;
     left: 55px;
     margin-bottom: 65px;
 }
+
+
+.section {
+  background: #1D2439;
+  color: #FFEEF8;
+}
+.settings {
+
+}
+
+.sh2 {
+  margin-bottom: 40px;
+  margin-left: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+.settings-pick {
+  margin-bottom: 20px;
+}
+
+.pick {
+  margin-bottom: 10px;
+}
+
+.form-pick {
+  margin: 20px 0;
+}
+
+.form-pick button {
+  width: 45px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #EDF2FF;
+  border: none;
+  outline: none;
+  font-size: 16px;
+
+  color: #1E2C59;
+}
+
+.form2 {
+  width: 350px;
+  height: 30px;
+}
+
+input[type="search"]{
+    width: 335px;
+    height: 30px;
+}
+
+.invite {
+  margin-bottom: 20px;
+  margin-top:20px;
+}
+
+.link-text {
+  margin-top: 5px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.copy-link {
+  display: flex;
+}
+
+.link-placeholder {
+  width: 335px;
+  height: 30px;
+  background-color: #fff;
+  color: #1E2C59;
+  width: 305px;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+  outline: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  font-family: 'Muli', sans-serif;
+  text-decoration: none;
+  margin: 0;
+  width: 45px;
+  height: 30px;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  background-color: #EDF2FF;
+  color: #1E2C59;
+}
+
+.copy-link button {
+  background-color: #EDF2FF;
+}
+
+.sh2-player {
+  margin-bottom: 0;
+  display: block;
+
+}
+
+
+
 footer{
     height: 188px;
 }
 #footercontent{
     line-height: 182px;
-    
+
 }
