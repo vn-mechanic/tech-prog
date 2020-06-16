@@ -34,37 +34,33 @@
     </div><!-- end wrap-->
 
 
-         <section class="section">
-           <div id="wrap4">
-           <div class="settings">
-             <h2 class="sh2">Настройки просмотра</h2>
+    <section class="section">
+      <div id="wrap4">
+        <div class="player">
+          <video src="media/1.mp4" controls="controls" class="video"></video>
+        </div>
+      <div class="wrap-com">
+        <div>
+          <form name="comment" action="comment.php" method="post" class="comment">
+            <div class="nickname">
+              <input type="text" name="name" class="nickname-input nick" placeholder="Введите имя">
+            </div>
+            <div class="com-wrapper">
+              <div>
+                <textarea name="text_comment" cols="40" rows="2" class="nickname-input com-text" placeholder="Введите сообщение"></textarea>
+              </div>
+              <div>
+                <input type="hidden" name="page_id" value="120" class=com/>
+                <input type="submit" class="button-com" value="Отправить" class=com />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class=comments></div>
+      </div>
 
-             <div class="settings-pick">
-               <h3 class="pick">Выбрать фильм</h3>
-               <div class="form-pick">
-                 <form action="#">
-                   <div class="form form2">
-                     <input name="test" method="post"  type="search" placeholder="Введите запрос">
-                     <button> <i class="fa fa-search"></i></button>
-                   </div>
-                 </form>
-               </div>
-             </div>
-             <div class="invite">
-               <h3>Пригласить друзей</h3>
-               <p class="link-text">Чтобы пригласить друзей, воспользуйтесь этой ссылкой</p>
-               <div class="copy-link">
-                 <input type="text" value="link" class="link-placeholder" id="mLink">
-                 <button type="button" name="button" class="fa btn" onclick="clickFunction">Copy</button>
-               </div>
-             </div>
-           </div>
-           <div class="player">
-             <h2 class="sh2 sh2-player">Плеер</h2>
-
-           </div>
-           </div>
-         </section>
+  </section>
 
 
     <div id=wrap3>
