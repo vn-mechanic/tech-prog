@@ -29,7 +29,7 @@ html{
 }
 
 #wrap4 {
-  width: 1450px;
+  width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -557,7 +557,77 @@ input[type="text"] {
 
 }
 
+.video {
+  width: 900px;
+  height: 600px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
 
+.wrap-com {
+  margin-top: 100px;
+  background-color: #2F3A59;
+  width: 430px;
+  height: 550px;
+}
+
+
+.com-wrapper {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.nickname {
+  margin-bottom: 3px;
+}
+
+:focus::-webkit-input-placeholder { color:transparent; }
+:focus::-moz-placeholder { color:transparent; }
+:focus::placeholder { color:transparent; }
+
+.nick {
+  width: 409px;
+  padding: 0;
+  height: 35px;
+  padding-bottom: 10px;
+}
+
+.nickname-input {
+  font-family: 'Muli', sans-serif;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 14px;
+  background: #4D6093;
+  color: #ADB5CB;
+}
+
+.com-text {
+  resize: none;
+  outline: none;
+  border: 0px;
+  width: 328px;
+  padding-top: 20px;
+}
+
+.button-com {
+  font-family: 'Muli', sans-serif;
+  font-size: 14px;
+  height: 56px;
+  display: block;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0px;
+  outline: none;
+  background-color: #465784;
+  color: #ADB5CB;
+}
+
+.button-com:hover {
+  background-color: #39476B;
+}
 
 footer{
     height: 188px;
