@@ -1,0 +1,3 @@
+﻿Alex;Чат готов к работе!
+Nagato;<img src="https://raw.githubusercontent.com/AlexBoychenko/chat_for_project/master/Pain1.jpg">
+Nagato;<code>Даже просто живя, мы раним других в попытке избежать страданий самим. Наше существование гарантирует то, что ненависть никогда не исчезнет. Мир и гармония не существуют в этом проклятом мире.</code>
