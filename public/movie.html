@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Watch</title>
+
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+
+
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div class="logo">
+                    <a href="#"><i class="fa fa-film" aria-hidden="true"></i></a>
+                </div>
+                <div class="name">
+                    <span class="name1"><a href="index.html">Alone2Gether</a></span>
+                    <span class="name2">Сервис для просмотра фильмов</span>
+                </div>
+                <div class="form1">
+                    <form action="#">
+                        <div class="form">
+                            <input name="test" method="post"  type="search" placeholder="Введите запрос">
+                            <button> <i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+        </div><!-- end wrap-->
+
+
+        <section class="section">
+            <div id="wrap4">
+                <div class="player">
+                    <video src="movies/1.mp4" controls="controls" class="video"></video>
+                </div>
+                <div id="holder" class="com-wrapper">
+                    <form id="messageForm">
+                        <input type="nickname" id="nicknameInput" class="nickname" placeholder="Введите имя"/>
+                        <div class="type-wrap">
+                          <input type="text" id="Написать..." class="nickname text-box" placeholder="Type.."/>
+                          <button type="submit" id="btn" class="btn-com" onclick="hidel()">Отправить</button>
+                        </div>
+                    </form>
+                    <div class="chat" id="chat" style="overflow-y:scroll; height:530px;">
+                        <div id="messageBox" class="comments">
+                        </div>
+                    </div>
+                    <div class=comments></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    <div id=wrap3>
+     <footer>
+       <div id="footercontent">
+         <div class=logo>
+           <a href="#"><i class="fa fa-film" aria-hidden="true"></i></a>
+         </div>
+         <div class=name>
+           <span class=name1>Alone2Gether</span>
+           <span class=name2>Сервис для просмотра фильмов</span>
+         </div>
+       </div><!-- end footercontent -->
+     </footer><!-- end footer -->
+    </div><!-- end wrap3-->
+  </body>
+  <script>
+$(function(){
+var socket = io.connect();  //connects to socket
+var $messageForm = $("#messageForm"); //ref to the div message form
+var $nicknameInput = $("#nicknameInput");
+var $messageInput = $("#messageInput"); //ref to input box with id message
+var $chat = $("#chat"); //ref to div chat
+var test = $messageInput.val("");
+
+$messageForm.submit(function(e){
+e.preventDefault();
+socket.emit("send user message", $nicknameInput.val()+": "+$messageInput.val());
+$messageInput.val("");
+
+
+});
+socket.on("new user message", function(data){
+
+
+if(data.msg.length > 0){
+$chat.append('<br>'  + '<textarea id="t" readonly>' + data.msg + '</textarea>'+' </div>' + '<br>' );
+}
+});
+
+});
+
+showlog = false;
+window.setInterval(function() {
+if(showlog == false){
+  var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+  }
+}, 4);
+
+function showl(){
+showlog = true;
+
+}
+function hidel(){
+var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+showlog = false;
+}
+</script>
+</html>

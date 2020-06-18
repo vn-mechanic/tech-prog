@@ -564,57 +564,40 @@ input[type="text"] {
   margin-bottom: 150px;
 }
 
-.wrap-com {
-  margin-top: 100px;
+.com-wrapper {
+  margin-top: 50px;
   background-color: #2F3A59;
   width: 430px;
-  height: 550px;
-}
-
-
-.com-wrapper {
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
+  height: 600px;
 }
 
 .nickname {
-  margin-bottom: 3px;
-}
-
-:focus::-webkit-input-placeholder { color:transparent; }
-:focus::-moz-placeholder { color:transparent; }
-:focus::placeholder { color:transparent; }
-
-.nick {
-  width: 409px;
+  width: 160px;
   padding: 0;
-  height: 35px;
-  padding-bottom: 10px;
-}
-
-.nickname-input {
-  font-family: 'Muli', sans-serif;
-  padding-left: 20px;
-  padding-top: 10px;
-  font-size: 14px;
-  background: #4D6093;
-  color: #ADB5CB;
-}
-
-.com-text {
-  resize: none;
+  height: 30px;
   outline: none;
   border: 0px;
-  width: 328px;
-  padding-top: 20px;
+  background-color: #4D6093;
+  color: #ADB5CB;
+  padding-left: 10px;
 }
 
-.button-com {
+.type-wrap {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.text-box {
+  width: 360px;
+}
+
+.btn-com {
   font-family: 'Muli', sans-serif;
   font-size: 14px;
-  height: 56px;
-  display: block;
+  height: 30px;
   text-align: center;
   padding: 6px;
   text-decoration: none;
@@ -625,8 +608,12 @@ input[type="text"] {
   color: #ADB5CB;
 }
 
-.button-com:hover {
-  background-color: #39476B;
+.comments {
+  resize: auto;
+  outline: none;
+  border: 0px;
+  background-color: #465784;
+  display: block;
 }
 
 footer{
