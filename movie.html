@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Watch</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Watch</title>
 
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet">
 
-    <script src='js/1.js'></script>
-
-  </head>
-  <body>
-    <div id="wrap">
-        <header>
-          <div class="logo">
-            <a href="#"><i class="fa fa-film" aria-hidden="true"></i></a>
-          </div>
-          <div class="name">
-            <span class="name1">Alone2Gether</span>
-            <span class="name2">Сервис для просмотра фильмов</span>
-          </div>
-          <div class="form1">
-            <form action="#">
-              <div class="form">
-                <input name="test" method="post"  type="search" placeholder="Введите запрос">
-                <button> <i class="fa fa-search"></i></button>
-              </div>
-            </form>
-          </div>
-        </header>
-    </div><!-- end wrap-->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
 
 
-    <section class="section">
-      <div id="wrap4">
-        <div class="player">
-          <video src="media/1.mp4" controls="controls" class="video"></video>
-        </div>
-      <div class="wrap-com">
-        <div>
-          <form name="comment" action="comment.php" method="post" class="comment">
-            <div class="nickname">
-              <input type="text" name="name" class="nickname-input nick" placeholder="Введите имя">
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div class="logo">
+                    <a href="#"><i class="fa fa-film" aria-hidden="true"></i></a>
+                </div>
+                <div class="name">
+                    <span class="name1"><a href="index.html">Alone2Gether</a></span>
+                    <span class="name2">Сервис для просмотра фильмов</span>
+                </div>
+                <div class="form1">
+                    <form action="#">
+                        <div class="form">
+                            <input name="test" method="post"  type="search" placeholder="Введите запрос">
+                            <button> <i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+        </div><!-- end wrap-->
+
+
+        <section class="section">
+            <div id="wrap4">
+                <div class="player">
+                    <video src="movies/1.mp4" controls="controls" class="video"></video>
+                </div>
+                <div id="holder">
+                    <form id="messageForm">
+                        <input type="nickname" id="nicknameInput" placeholder="Your name"/>
+                        <input type="text" id="messageInput" placeholder="Type.."/>
+                        <button type="submit" id="btn" onclick="hidel()">Send</button>
+            
+                    </form>
+                    <div class="chat" id="chat" style="overflow-y:scroll; height:450px;">
+                        <div id="messageBox">
+
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"  id="btn1" onclick="showl()"> Show All </button>
+                <div id="people" style="overflow-y:scroll; height:450px;">
+                </div>
+                <div class=comments></div>
             </div>
-            <div class="com-wrapper">
-              <div>
-                <textarea name="text_comment" cols="40" rows="2" class="nickname-input com-text" placeholder="Введите сообщение"></textarea>
-              </div>
-              <div>
-                <input type="hidden" name="page_id" value="120" class=com/>
-                <input type="submit" class="button-com" value="Отправить" class=com />
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class=comments></div>
-      </div>
 
-  </section>
+        </section>
 
 
     <div id=wrap3>
@@ -77,4 +77,48 @@
      </footer><!-- end footer -->
     </div><!-- end wrap3-->
   </body>
+  <script>
+$(function(){
+var socket = io.connect();  //connects to socket
+var $messageForm = $("#messageForm"); //ref to the div message form
+var $nicknameInput = $("#nicknameInput");
+var $messageInput = $("#messageInput"); //ref to input box with id message
+var $chat = $("#chat"); //ref to div chat
+var test = $messageInput.val("");
+
+$messageForm.submit(function(e){
+e.preventDefault();
+socket.emit("send user message", $nicknameInput.val()+": "+$messageInput.val());
+$messageInput.val("");
+
+
+});
+socket.on("new user message", function(data){
+
+
+if(data.msg.length > 0){
+$chat.append('<br>'  + '<textarea id="t" readonly>' + data.msg + '</textarea>'+' </div>' + '<br>' );
+}
+});
+
+});
+
+showlog = false;
+window.setInterval(function() {
+if(showlog == false){
+  var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+  }
+}, 4);
+
+function showl(){
+showlog = true;
+
+}
+function hidel(){
+var chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
+showlog = false;
+}
+</script>
 </html>
