@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"">
+  <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <header>
+      <div class="form1">
+          <form action="#">
+              <div class="form error-form">
+                  <input name="test" method="post"  id ="qsearch" type="search" placeholder="Введите запрос">
+      <button onclick="search()"> <i class="fa fa-search"></i></button>
+              </div>
+          </form>
+      </div>
+    </header>
+
+    <section id="error-text">
+      <p>404 never gonna give you up</p>
+    </section>
+  </body>
+  <script>
+  function search(){
+    var request = String(document.getElementById("qsearch").value).toLowerCase();
+    if (String(request) === String("harry potter")){
+        window.location = "hp.html";
+    } else if (String(request) === String("scott pilgrim")){
+        window.location.href = "sp.html";
+                
+    } else if(String(request) === String("star wars")){
+        window.location = "sw.html";
+        } else{
+    
+    window.location = "error.html";
+    }
+}
+  
+  </script>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Watch</title>
+        <title>Star Wars</title>
 
         <link rel="stylesheet" href="../css/font-awesome.min.css">
         <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
@@ -27,8 +27,8 @@
                 <div class="form1">
                     <form action="#">
                         <div class="form">
-                            <input name="test" method="post"  type="search" placeholder="Введите запрос">
-                            <button> <i class="fa fa-search"></i></button>
+                            <input name="test" method="post"  id ="qsearch" type="search" placeholder="Введите запрос">
+      <button onclick="search()"> <i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </div>
@@ -40,7 +40,9 @@
         <section class="section">
             <div id="wrap4">
                 <div class="player">
-                    <video src="movies/1.mp4" controls="controls" class="video"></video>
+                    <video src="../movies/sw.mp4" controls="controls" class="video">
+                    <track src ="../subs/sw.sub">
+                    </video>
                 </div>
                 <div id="holder" class="com-wrapper">
                     <form id="messageForm">
@@ -75,6 +77,21 @@
     </div><!-- end wrap3-->
   </body>
   <script>
+  function search(){
+    var request = String(document.getElementById("qsearch").value).toLowerCase();
+    if (String(request) === String("harry potter")){
+        window.location = "hp.html";
+    } else if (String(request) === String("scott pilgrim")){
+        window.location.href = "sp.html";
+                
+    } else if(String(request) === String("star wars")){
+        window.location = "sw.html";
+        } else{
+    
+    window.location = "error.html";
+    }
+}
+  
 $(function(){
 var socket = io.connect();  //connects to socket
 var $messageForm = $("#messageForm"); //ref to the div message form

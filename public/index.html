@@ -35,15 +35,13 @@
      <form action="#">
      <div class="form">
 
-      <input name="test" method="post"  type="search" placeholder="Введите запрос">
-      <button> <i class="fa fa-search"></i></button>
+      <input name="test" method="post"  id ="qsearch" type="search" placeholder="Введите запрос">
+      <button onclick="search()"> <i class="fa fa-search"></i></button>
 
       </div>
     </form>
-      </div>
-
-              <div id=play><i class="fa fa-play-circle" id=fa-play-circle ></i></div>
-
+              </div>
+               <div id=play><i class="fa fa-play-circle" id=fa-play-circle ></i></div>
 
           </header>
       </div><!-- end wrap-->
@@ -174,4 +172,18 @@
       </div><!-- end wrap3-->
 
         </body>
+        
+<script>
+function search(){
+    var request = String(document.getElementById("qsearch").value).toLowerCase();
+    if (String(request) === String("harry potter")){
+        window.location = "hp.html";
+    } else if (String(request) === String("scott pilgrim")){
+        window.location.href = "sp.html";
+                window.location.href = "movie.html";
+    } else {
+    window.location = "error.html";
+    }
+}
+</script>
 </html>
